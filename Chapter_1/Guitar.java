@@ -3,23 +3,16 @@ package Chapter_1;
 public class Guitar
 {
     /* Member field */
-    private Builder builder;
-    private Type type;
-    private Wood backWood,topWood;
-    private String serialNumber, model;
+    private String serialNumber;
     private double price;
+    private GuitarSpec spec;
 
     /* Constructor */
-    public Guitar(String serialNumber, double price, Builder builder, String model, Type type,
-        Wood backWood, Wood topWood)
+    public Guitar(String serialNumber, double price, GuitarSpec spec)
     {
         this.serialNumber = serialNumber;
         this.price = price;
-        this.builder = builder;
-        this.model = model;
-        this.type = type;
-        this.backWood = backWood;
-        this.topWood = topWood;
+        this.spec = spec;
     }
 
     /* Methods */
@@ -35,25 +28,9 @@ public class Guitar
     {
         this.price = price;
     }
-    public Builder getBuilder()
+    public GuitarSpec getSpec()
     {
-        return builder;
-    }
-    public String getModel()
-    {
-        return model;
-    }
-    public Type getType()
-    {
-        return type;
-    }
-    public Wood getBackWood()
-    {
-        return backWood;
-    }
-    public Wood getTopWood()
-    {
-        return topWood;
+        return this.spec;
     }
     
 }
