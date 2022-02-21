@@ -1,5 +1,9 @@
 package Chapter_2;
 
+/* Java timing classes */
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Remote {
     /* Member variables */
     private DogDoor door;
@@ -22,6 +26,18 @@ public class Remote {
         {
             door.open();
         }
+        /* Create a timer task to handle
+         * Automatic closure of the door
+        */
+        final Timer timer = new Timer();
+        timer.schedule(new TimerTask()
+        {
+            public void run()
+            {
+                door.close();
+                timer.cancel();
+            }
+        }, 5000);
     }
     
 }
